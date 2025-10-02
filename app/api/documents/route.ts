@@ -28,3 +28,16 @@ export async function GET() {
     }
     
 }
+
+export async function DELETE(request: any) {
+    const id = request.nextUrl.searchParams.get("id");
+    try {
+        await connectMongoDB(); 
+        await Document.findByIdAndDelete(id);
+        return NextResponse.json({ message: "Document Deleted" }, { status: 200 });
+    } catch (error) {
+        console.error("API Route Error:", error);
+        return NextResponse.json({ message: "An error occurred." }, { status: 500 });
+    }
+    
+}
