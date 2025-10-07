@@ -17,7 +17,6 @@ export async function PUT(request: any, { params }: { params: { id: string } }) 
   }
 }
 
-
 export async function GET(request: any, { params }: { params: { id: string } }) {
   const { id } = params;
   try {
