@@ -20,7 +20,7 @@ export async function POST(request: Request) {
 export async function GET() {
     try {
         await connectMongoDB(); 
-       const Documents = await Document.find();
+        const Documents = await Document.find();
         return NextResponse.json({ Documents }, { status: 201 });
     } catch (error) {
         console.error("API Route Error:", error);
