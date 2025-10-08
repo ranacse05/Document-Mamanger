@@ -26,10 +26,7 @@ export default function AddDoc() {
             })
             
             if (res.ok) {
-                router.push('/') // Use router.push instead of redirect
-                // Alternatively, you can use:
-                // router.refresh() // if you want to refresh the current page data
-                // router.replace('/') // if you want to replace history entry
+                router.push('/'); 
             } else {
                 throw new Error("Failed to create a document")
             }
